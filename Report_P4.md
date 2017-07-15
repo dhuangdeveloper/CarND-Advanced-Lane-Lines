@@ -263,13 +263,15 @@ The intermediate images are displayed below:
 Here's a [link to my video result](./output_videos/project_video.mp4)
 <video controls src="./output_videos/project_video.mp4" />
 
-
 For the video, we apply the following techniques to leverage the continuity of images across frames:
 
 - We keep track the best estimate of left lanes and right lanes, and  update them with the recent image using an exponential average rule with alpha = 0.2.
 - To search for lanes in the new frame, we use the best estimated lanes to from the search area: The search area is formed by shifting each lane left and right by 30 pixels and using the area in between. 
 - We check the curvature and slope of left and right lanes estimated from the current image, and reject them if the difference is too large. In the case of rejection of current estimate, we do not update the lanes. 
-- The marked lanes in the image are from the best estimate.
+- The marked lanes in the image are from the best estimate. Note that we mark the lane with red and orange color and the area between the lanes with green. 
+
+**Note: Normally the lane color would be red but in the case that the current frame's lanes are rejected, we color the lanes with orange. **
+
 
 ---
 
