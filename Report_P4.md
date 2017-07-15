@@ -15,10 +15,6 @@ The goals / steps of this project are the following:
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
-[//]: # (Image References)
-
-[image1]: ./write_up_img/calibration_corners.jpg "calibration corners"
-[image2]: ./write_up_img/undistorted_image.jpg "Undistorted image"|
 [video1]: ./output_videos/project_video.mp4 "Video"
 
 
@@ -46,7 +42,7 @@ Here I assume that the same camera is used to capture all the provided chessboar
 ##### Identified corners
 The identified corners for the images are depicted below where the image title is the size of the grid identified for this image.
 
-![alt text][image1]
+![alt text](./write_up_img/calibration_corners.jpg)
 
 Note that the number of corners in each image is not the same among the provided images, therefore, we try to repeatedly apply cv2.findChessboardCorners with different grid sizes, according to the following order [(9,6), (9,5), (8,6), (8,5), (7,6), (7,5), (6,6), (5,6)], and will return the corners the first time that cv2.findChessboardCorners is able to find them.
 
@@ -54,7 +50,7 @@ Note that the number of corners in each image is not the same among the provided
 ##### Undistorted image
 The test image and the undistorted version are shown below:
 
-![alt text][image2]
+![alt text](./write_up_img/undistorted_image.jpg)
 
 
 ### 2. Pipeline (single image)
